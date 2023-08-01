@@ -68,22 +68,14 @@ const Header = () => {
                       />
                     </div>
 
-                    <button className="btn bg-red-600 text-white">
-                      Log Out
-                    </button>
+                    <button className="my-btn hover:bg-red-800">Log Out</button>
                   </>
                 ) : (
                   <>
-                    <Link
-                      to="/login"
-                      className="btn hover:bg-red-800 bg-red-600 text-white mr-2"
-                    >
+                    <Link to="/login" className="my-btn hover:bg-red-800 mr-2">
                       Login
                     </Link>
-                    <Link
-                      to="/register"
-                      className="btn hover:bg-red-800 bg-red-600 text-white"
-                    >
+                    <Link to="/register" className="my-btn hover:bg-red-800">
                       Register
                     </Link>
                   </>
@@ -134,20 +126,14 @@ const Header = () => {
                   />
                 </div>
 
-                <button className="btn bg-red-600 text-white">Log Out</button>
+                <button className="my-btn hover:bg-red-800">Log Out</button>
               </>
             ) : (
               <>
-                <Link
-                  to="/login"
-                  className="btn hover:bg-red-800 bg-red-600 text-white mr-2"
-                >
+                <Link to="/login" className="my-btn hover:bg-red-800 mr-2">
                   Login
                 </Link>
-                <Link
-                  to="/register"
-                  className="btn hover:bg-red-800 bg-red-600 text-white"
-                >
+                <Link to="/register" className="my-btn hover:bg-red-800">
                   Register
                 </Link>
               </>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
-    const user={email: 'fsdfsdf'}
+    const user={email: ''}
     return (
       <div className=" bg-pink shadow-md">
         <div className="navbar container mx-auto ">
@@ -51,10 +51,47 @@ const Header = () => {
                 <li>
                   <ActiveLink to="/blogs">Blogs</ActiveLink>
                 </li>
+                {user?.email ? (
+                  <>
+                    <div
+                      className="tooltip tooltip-bottom"
+                      data-tip={user.email}
+                    >
+                      <img
+                        className="w-10 rounded-full border-red-600 border mr-2"
+                        src={
+                          user.photoURL
+                            ? user.photoURL
+                            : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png"
+                        }
+                        alt=""
+                      />
+                    </div>
+
+                    <button className="btn bg-red-600 text-white">
+                      Log Out
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      to="/login"
+                      className="btn hover:bg-red-800 bg-red-600 text-white mr-2"
+                    >
+                      Login
+                    </Link>
+                    <Link
+                      to="/register"
+                      className="btn hover:bg-red-800 bg-red-600 text-white"
+                    >
+                      Register
+                    </Link>
+                  </>
+                )}
               </ul>
             </div>
             <a className="btn btn-ghost normal-case text-xl ">
-              <img className="w-36" src={logo} alt="my-hero" />{" "}
+              <img className="lg:w-36 w-24" src={logo} alt="my-hero" />{" "}
             </a>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -82,7 +119,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <div className="navbar-end ">
+          <div className="lg:navbar-end md:navbar-end lg:flex md:flex hidden">
             {user?.email ? (
               <>
                 <div className="tooltip tooltip-bottom" data-tip={user.email}>

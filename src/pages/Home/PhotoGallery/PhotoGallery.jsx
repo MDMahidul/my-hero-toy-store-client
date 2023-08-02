@@ -2,7 +2,7 @@ import React from 'react';
 
 const PhotoGallery = () => {
     return (
-      <div className="container bg-base-100 mx-auto px-5 my-5 ">
+      <div className="container bg-base-100 mx-auto px-4 my-5 ">
         <h2 className="text-4xl font-bold text-red-600 text-center my-10 lg:pb-5">
           Heros Gallery
         </h2>

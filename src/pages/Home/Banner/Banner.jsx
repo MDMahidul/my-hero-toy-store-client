@@ -23,7 +23,7 @@ const Banner = () => {
               want to be.Explore a vast collection of action figures,
               merchandise, and memorabilia from your favorite superheroes.
             </p>
-            <button className="my-btn hover:bg-red-800">
+            <button className="my-btn">
               Get Started
             </button>
           </div>

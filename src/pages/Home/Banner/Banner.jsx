@@ -3,7 +3,7 @@ import bannerimg from '../../../assets/img/header.png'
 
 const Banner = () => {
     return (
-      <div className="hero min-h-screen px-4 container mx-auto lg:mt-[-20px]">
+      <div className="hero bg-base-100 min-h-screen px-4 container mx-auto mt-2">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src="https://www.superherotoystore.com/cdn/shop/files/Untitleddesign_855af409-f28b-4948-a860-870fad9b8f71_1600x.jpg?v=1685709560"

@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const MyToys = () => {
+    const{user}=useContext(AuthContext);
      const loadedToys = useLoaderData();
      const [toys,setToys] =useState(loadedToys);
 
@@ -36,11 +38,39 @@ const MyToys = () => {
          }
        });
      };
+        const handleAscendingOrder=()=>{
+            fetch(`http://localhost:5000/ascending/${user?.email}`)
+                .then(res=>res.json())
+                .then(data=>{
+                    setToys(data);
+                })
+        }
+        const handleDescendingOrder=()=>{
+            fetch(`http://localhost:5000/descending/${user?.email}`)
+              .then((res) => res.json())
+              .then((data) => {
+                setToys(data);
+              });
+        }
      return (
        <div className="container mx-auto px-4 mt-5 mb-20">
          <h1 className="text-center py-4 font-bold text-red-600 text-3xl">
            My Toys
          </h1>
+         <div className="my-2">
+           <button
+             onClick={handleAscendingOrder}
+             className="btn bg-red-600 text-white hover:bg-red-800 text-xs btn-sm mr-2"
+           >
+             Ascending{" "}
+           </button>
+           <button
+             onClick={handleDescendingOrder}
+             className="btn bg-red-600 text-white hover:bg-red-800 text-xs btn-sm"
+           >
+             Descending{" "}
+           </button>
+         </div>
          <div className="overflow-x-auto ">
            <table className="table">
              {/* head */}

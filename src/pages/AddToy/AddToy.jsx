@@ -198,7 +198,7 @@ const AddToy = () => {
                   </label>
                   <textarea
                     className="textarea textarea-bordered"
-                    placeholder="Bio"
+                    placeholder="description"
                     required 
                     name="description"
                   ></textarea>
@@ -210,9 +210,6 @@ const AddToy = () => {
                   <button className="my-btn">Upload</button>
                 </div>
               </form>
-              <div className="divider">
-                <span className="text-xs">OR Sign In With Google</span>
-              </div>
             </div>
           </div>
         </div>

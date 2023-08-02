@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   const [errors, setErrors] = useState("");
@@ -19,7 +20,27 @@ const AddToy = () => {
     const description = form.description.value;
 
     const upinfo={toyName,sellerName,sellerEmail,category,price,rating,quantity,photourl,description}
-    console.log(upinfo);
+   /*  console.log(upinfo); */
+    fetch("http://localhost:5000/upload", {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(upinfo),
+    })
+      .then((res) =>res.json())
+      .then((data) => {
+        console.log(data);
+         if (data.insertedId) {
+           Swal.fire({
+             title: "success",
+             text: "Toy added successfully!",
+             icon: "success",
+             confirmButtonText: "OK",
+           });
+           form.reset();
+         } 
+      });
 
   };
   return (
@@ -127,7 +148,7 @@ const AddToy = () => {
                       </span>
                     </label>
                     <input
-                      type="number"
+                      type="text"
                       placeholder="enter ratings"
                       className="input input-bordered"
                       name="rating"
@@ -185,7 +206,7 @@ const AddToy = () => {
                 <span className="label-text-alt text-center text-red-600">
                   {errors}
                 </span>
-                <div className="form-control mt-2">
+                <div className="form-control mt-4">
                   <button className="my-btn">Upload</button>
                 </div>
               </form>

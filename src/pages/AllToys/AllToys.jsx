@@ -5,7 +5,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const AllToys = () => {
     const toys = useLoaderData();
     return (
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mt-5 mb-20">
         <h1 className="text-center py-4 font-bold text-red-600 text-3xl">
           All Toys
         </h1>

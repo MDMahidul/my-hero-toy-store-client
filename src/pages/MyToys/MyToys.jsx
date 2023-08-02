@@ -1,10 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const MyToys = () => {
-     const toys = useLoaderData();
+     const loadedToys = useLoaderData();
+     const [toys,setToys] =useState(loadedToys);
+
+     const handleDelete = (_id) => {
+       Swal.fire({
+         title: "Are you sure?",
+         text: "You want to delete this data!!!",
+         icon: "warning",
+         showCancelButton: true,
+         confirmButtonColor: "#3085d6",
+         cancelButtonColor: "#d33",
+         confirmButtonText: "Yes, delete it!",
+       }).then((result) => {
+         if (result.isConfirmed) {
+           fetch(`http://localhost:5000/delete/${_id}`, {
+             method: "DELETE",
+           })
+             .then((res) => res.json())
+             .then((data) => {
+               console.log(data);
+               if (data.deletedCount > 0) {
+                 Swal.fire(
+                   "Deleted!",
+                   "Your data has been deleted Successfully!!!.",
+                   "success"
+                 );
+                 const remaining = toys.filter((toy) => toy._id !== _id);
+                 setToys(remaining);
+               }
+             });
+         }
+       });
+     };
      return (
-       <div className="container mx-auto px-4">
+       <div className="container mx-auto px-4 mt-5 mb-20">
          <h1 className="text-center py-4 font-bold text-red-600 text-3xl">
            My Toys
          </h1>
@@ -34,10 +67,16 @@ const MyToys = () => {
                    <td>
                      <Link
                        to={`/update/${toy._id}`}
-                       className="btn bg-red-600 text-white hover:bg-red-800 text-xs btn-sm"
+                       className="btn bg-red-600 text-white hover:bg-red-800 text-xs btn-sm mr-2"
                      >
                        Update
                      </Link>
+                     <button
+                       onClick={() => handleDelete(toy._id)}
+                       className="btn bg-red-600 text-white hover:bg-red-800 text-xs btn-sm"
+                     >
+                       Delete
+                     </button>
                    </td>
                  </tr>
                ))}

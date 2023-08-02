@@ -44,7 +44,7 @@ const AddToy = () => {
 
   };
   return (
-    <div className=" min-h-screen bg-base-100 my-5">
+    <div className=" min-h-screen bg-base-100 my-8">
       <div className="hero-content text-center">
         <div className="lg:w-1/2">
           <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">

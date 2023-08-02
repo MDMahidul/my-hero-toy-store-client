@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../assets/logo.png'
 import { Link } from 'react-router-dom';
 import ActiveLink from '../ActiveLink/ActiveLink';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Header = () => {
-    const user={email: ''}
+    const { user, userLogout } = useContext(AuthContext);
+    const handleLogOut=()=>{
+      userLogout()
+        .then()
+        .catch(error=>{
+          console.log(error);
+        })
+    }
     return (
       <div className=" bg-pink shadow-md">
         <div className="navbar container mx-auto ">
@@ -68,7 +76,9 @@ const Header = () => {
                       />
                     </div>
 
-                    <button className="my-btn">Log Out</button>
+                    <button onClick={handleLogOut} className="my-btn">
+                      Log Out
+                    </button>
                   </>
                 ) : (
                   <>
@@ -114,7 +124,7 @@ const Header = () => {
           <div className="lg:navbar-end md:navbar-end lg:flex md:flex hidden">
             {user?.email ? (
               <>
-                <div className="tooltip tooltip-bottom" data-tip={user.email}>
+                <div className="tooltip tooltip-bottom" data-tip={user.displayName ? user.displayName : 'user'}>
                   <img
                     className="w-10 rounded-full border-red-600 border mr-2"
                     src={
@@ -126,7 +136,9 @@ const Header = () => {
                   />
                 </div>
 
-                <button className="my-btn">Log Out</button>
+                <button onClick={handleLogOut} className="my-btn">
+                  Log Out
+                </button>
               </>
             ) : (
               <>

@@ -15,8 +15,8 @@ const AllToys = () => {
             <thead className="bg-gray-200">
               <tr>
                 <th>SL</th>
-                <th>Seller Name</th>
                 <th>Toy Name</th>
+                <th>Seller Name</th>
                 <th>Category</th>
                 <th>Price</th>
                 <th> Quantity</th>

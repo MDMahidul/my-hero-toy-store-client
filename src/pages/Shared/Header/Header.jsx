@@ -47,7 +47,7 @@ const Header = () => {
                 {user?.email ? (
                   <>
                     <li>
-                      <ActiveLink to="/mytoys">My Toys</ActiveLink>
+                      <ActiveLink to={`/mytoys/${user?.email}`}>My Toys</ActiveLink>
                     </li>
                     <li>
                       <ActiveLink to="/addtoy">Add A Toy</ActiveLink>
@@ -107,7 +107,7 @@ const Header = () => {
               {user?.email ? (
                 <>
                   <li>
-                    <ActiveLink to="/mytoys">My Toys</ActiveLink>
+                    <ActiveLink to={`/mytoys/${user?.email}`}>My Toys</ActiveLink>
                   </li>
                   <li>
                     <ActiveLink to="/addtoy">Add A Toy</ActiveLink>

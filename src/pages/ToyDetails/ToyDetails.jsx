@@ -20,7 +20,6 @@ const ToyDetails = () => {
               <p className="text-base"><span className='font-bold text-red-600'>Rating: </span>{rating}</p>
               <p className="text-base"><span className='font-bold text-red-600'>Available Quantiry: </span>{quantity}</p>
               <p className="text-base"><span className='font-bold text-red-600'>Description: </span>{description}</p>
-              <Link to='/alltoys' className='my-btn my-6'>Go Back</Link>
             </div>
           </div>
         </div>

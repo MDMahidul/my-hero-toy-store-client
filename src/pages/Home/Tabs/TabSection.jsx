@@ -23,6 +23,9 @@ const TabSection = () => {
   };
   return (
     <div className="container mx-auto text-center my-20 px-4 ">
+      <h2 className="text-4xl font-bold text-red-600 text-center mb-5 lg:pb-5 ">
+        Heros By Category
+      </h2>
       <Tabs onSelect={(index) => setActiveTabIndex(index)}>
         <TabList className="flex justify-center space-x-4 border-b-2">
           <Tab onClick={() => handleTabClick("dc")}>

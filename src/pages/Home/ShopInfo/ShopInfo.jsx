@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from "aos";
 
 const ShopInfo = () => {
+
+   useEffect(() => {
+      AOS.init({
+        easing: "ease-in-sine",
+        duration: 1000,
+        anchorPlacement: "top-bottom",
+        once: true,
+      });
+   }, []);
+
     return (
-      <div className="grid grid-cols-1 lg:grid-cols-3 rounded-lg px-12 py-24 bg-gradient-to-r from-rose-500 to-yellow-500 mb-20 mt-10 container mx-auto gap-6 ">
+      <div className="grid grid-cols-1 lg:grid-cols-3 rounded-lg px-12 py-24 bg-gradient-to-r from-rose-500 to-yellow-500 mb-20 mt-10 container mx-auto gap-6 " data-aos="zoom-in">
         <div className="flex items-center gap-4">
           <div>
             <svg

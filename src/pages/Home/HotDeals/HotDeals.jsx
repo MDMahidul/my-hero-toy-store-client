@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaFire } from 'react-icons/fa6';
+import AOS from "aos";
 
 const HotDeals = () => {
+  useEffect(()=>{
+     AOS.init({
+       easing: "ease-in-sine",
+       duration: 1000,
+       anchorPlacement: "top-bottom",
+       once: true,
+     });
+  },[])
     return (
       <div className="container mx-auto bg-base-100 shadow-md rounded-md pb-5 my-20">
-        <div className='flex justify-center items-center'>
+        <div className="flex justify-center items-center">
           <h2 className="text-4xl font-bold text-red-600 text-center mb-5 mr-3 lg:pb-5">
             New Collections
           </h2>
-          <FaFire className='text-yellow-500 text-3xl mb-3'></FaFire>
+          <FaFire className="text-yellow-500 text-3xl mb-3"></FaFire>
         </div>
-        <div className="carousel w-full">
+        <div className="carousel w-full" data-aos="zoom-in">
           <div
             id="slide1"
             className="carousel-item relative justify-center w-full"

@@ -2,11 +2,11 @@ import React from 'react';
 
 const PhotoGallery = () => {
     return (
-      <div className="container bg-base-100 mx-auto px-4 my-5 ">
+      <div className="container bg-base-100 mx-auto px-4 mt-5 mb-5">
         <h2 className="text-4xl font-bold text-red-600 text-center my-10 lg:pb-5">
           Heros Gallery
         </h2>
-        <div className="-m-1 lg:flex lg:flex-wrap  md:-m-2">
+        <div className="-m-1 lg:flex lg:flex-wrap  md:-m-2  lg:mb-24">
           <div className="flex lg:w-1/2 flex-wrap">
             <div className="lg:w-1/2 p-1 md:p-2 ">
               <img

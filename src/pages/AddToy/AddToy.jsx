@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../hook/useTitle";
 
 const AddToy = () => {
+  useTitle("add a toy");
   const [errors, setErrors] = useState("");
   const { user } = useContext(AuthContext);
 
@@ -19,29 +21,38 @@ const AddToy = () => {
     const photourl = form.photourl.value;
     const description = form.description.value;
 
-    const upinfo={toyName,sellerName,sellerEmail,category,price,rating,quantity,photourl,description}
-   /*  console.log(upinfo); */
-    fetch("http://localhost:5000/upload", {
+    const upinfo = {
+      toyName,
+      sellerName,
+      sellerEmail,
+      category,
+      price,
+      rating,
+      quantity,
+      photourl,
+      description,
+    };
+    /*  console.log(upinfo); */
+    fetch("https://my-hero-server.vercel.app/upload", {
       method: "POST",
       headers: {
-        'content-type': 'application/json'
+        "content-type": "application/json",
       },
       body: JSON.stringify(upinfo),
     })
-      .then((res) =>res.json())
+      .then((res) => res.json())
       .then((data) => {
         console.log(data);
-         if (data.insertedId) {
-           Swal.fire({
-             title: "success",
-             text: "Toy added successfully!",
-             icon: "success",
-             confirmButtonText: "OK",
-           });
-           form.reset();
-         } 
+        if (data.insertedId) {
+          Swal.fire({
+            title: "success",
+            text: "Toy added successfully!",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+          form.reset();
+        }
       });
-
   };
   return (
     <div className=" min-h-screen bg-base-100 my-8">
@@ -115,9 +126,7 @@ const AddToy = () => {
                       required
                       name="category"
                     >
-                      <option disabled >
-                        Select A Toy Category ?
-                      </option>
+                      <option disabled>Select A Toy Category ?</option>
                       <option value="dc">DC</option>
                       <option value="marvel">Marvel</option>
                       <option value="ben-ten">Ben Ten</option>
@@ -199,7 +208,7 @@ const AddToy = () => {
                   <textarea
                     className="textarea textarea-bordered"
                     placeholder="description"
-                    required 
+                    required
                     name="description"
                   ></textarea>
                 </div>

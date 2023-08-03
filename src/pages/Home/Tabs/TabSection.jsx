@@ -10,7 +10,7 @@ const TabSection = () => {
   const [activeTab, setActiveTab] = useState("dc");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toys/${activeTab}`, {})
+    fetch(`https://my-hero-server.vercel.app/toys/${activeTab}`, {})
       .then((res) => res.json())
       .then((result) => {
         setToys(result);

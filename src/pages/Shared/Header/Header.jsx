@@ -92,9 +92,9 @@ const Header = () => {
                 )}
               </ul>
             </div>
-            <a className="btn btn-ghost normal-case text-xl ">
-              <img className="lg:w-36 w-24" src={logo} alt="my-hero" />{" "}
-            </a>
+            <Link to='/' className="btn btn-ghost normal-case text-xl ">
+              <img className="lg:w-36 w-24" src={logo} alt="my-hero" />
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 font-semibold ">

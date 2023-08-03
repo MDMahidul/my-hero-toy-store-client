@@ -10,7 +10,7 @@ import AllToys from "../pages/AllToys/AllToys";
 import Error from "../pages/Error/Error";
 import PrivateRoute from "./PrivateRoute";
 import ToyDetails from "../pages/ToyDetails/ToyDetails";
-import UpdateToy from '../pages/UpdateToy/UpdateToy'
+import UpdateToy from "../pages/UpdateToy/UpdateToy";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
         path: "/alltoys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:5000/alltoys"),
+        loader: () => fetch("https://my-hero-server.vercel.app/alltoys"),
       },
       {
         path: "/mytoys/:email",
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/mytoys/${params.email}`),
+          fetch(`https://my-hero-server.vercel.app/mytoys/${params.email}`),
       },
       {
         path: "/addtoy",
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/details/${params.id}`),
+          fetch(`https://my-hero-server.vercel.app/details/${params.id}`),
       },
       {
         path: "/update/:id",
@@ -75,7 +75,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/details/${params.id}`),
+          fetch(`https://my-hero-server.vercel.app/details/${params.id}`),
       },
     ],
   },

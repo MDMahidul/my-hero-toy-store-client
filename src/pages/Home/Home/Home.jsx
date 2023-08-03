@@ -4,8 +4,10 @@ import PhotoGallery from '../PhotoGallery/PhotoGallery';
 import Tabs from '../Tabs/TabSection';
 import ShopInfo from '../ShopInfo/ShopInfo';
 import HotDeals from '../HotDeals/HotDeals';
+import useTitle from '../../../hook/useTitle';
 
 const Home = () => {
+      useTitle("home ");
     return (
         <div>
             <Banner></Banner>

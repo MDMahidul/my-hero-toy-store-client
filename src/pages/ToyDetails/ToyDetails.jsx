@@ -8,7 +8,7 @@ const ToyDetails = () => {
       useTitle(toyName);
     return (
       <div className='container mx-auto px-4 my-6 '>
-        <div className="hero  bg-base-100">
+        <div className="hero">
           <div className="hero-content flex-col lg:flex-row lg:justify-start lg:gap-10">
             <img
               src={photourl}

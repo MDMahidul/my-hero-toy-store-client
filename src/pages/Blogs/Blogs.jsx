@@ -5,15 +5,15 @@ const Blogs = () => {
     useTitle('blogs')
     return (
       <div className="container mx-auto px-4 mb-20">
-        <h1 className="text-3xl font-bold text-center my-10">Blog Page</h1>
+        <h1 className="text-3xl font-bold text-center my-10 text-red-600">Blog Page</h1>
         <div className="lg:w-3/4 mx-auto">
           <div className="mb-6">
-            <p className="text-xl font-semibold mb-2">
+            <p className="text-xl font-semibold mb-2 text-gray-600">
               <span className="text-red-600"> Question 1.</span> What is an
               access token and refresh token? How do they work and where should
               we store them on the client-side?
             </p>
-            <p className="ml-10">
+            <p className="ml-10 text-gray-500">
               <span className="font-semibold">Ans:</span> An access token is a
               temporary set of data which represents the authorization grnted to
               a client to access the server data. If the user logs in
@@ -33,11 +33,11 @@ const Blogs = () => {
             </p>
           </div>
           <div className="mb-6">
-            <p className="text-xl font-semibold mb-2">
+            <p className="text-xl font-semibold mb-2 text-gray-600">
               <span className="text-red-600"> Question 2.</span> Compare SQL and
               NoSQL databases?
             </p>
-            <p className="ml-10">
+            <p className="ml-10 text-gray-500">
               <span className="font-semibold">Ans: </span>SQL is mainly
               retational database and its structured database, on the other hand
               noSQL is non-relational or distributed database and its not so
@@ -54,11 +54,11 @@ const Blogs = () => {
             </p>
           </div>
           <div className="mb-6">
-            <p className="text-xl font-semibold mb-2">
+            <p className="text-xl font-semibold mb-2 text-gray-600">
               <span className="text-red-600"> Question 3.</span> What is express
               js? What is Nest JS?
             </p>
-            <p className="ml-10">
+            <p className="ml-10 text-gray-500">
               <span className="font-semibold">Ans: </span>Express.js and NestJS
               are both popular web frameworks for building server-side
               applications and both of them are based on Node.js.
@@ -82,11 +82,11 @@ const Blogs = () => {
             </p>
           </div>
           <div className="mb-6">
-            <p className="text-xl font-semibold mb-2">
+            <p className="text-xl font-semibold mb-2 text-gray-600">
               <span className="text-red-600"> Question 4.</span> What is MongoDB
               aggregate and how does it work?
             </p>
-            <p className="ml-10">
+            <p className="ml-10 text-gray-500">
               <span className="font-semibold">Ans: </span>MongoDB Aggregation
               uses an aggregate() method to perform the aggregation operations.
               Basically, this aggregation operation practices data records and

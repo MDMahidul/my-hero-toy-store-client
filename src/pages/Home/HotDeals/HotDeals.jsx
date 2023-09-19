@@ -12,7 +12,7 @@ const HotDeals = () => {
      });
   },[])
     return (
-      <div className="container mx-auto bg-base-100 shadow-md rounded-md pb-5 my-20">
+      <div className="container mx-auto shadow-md rounded-md pb-5 my-20">
         <div className="flex justify-center items-center">
           <h2 className="text-4xl font-bold text-red-600 text-center mb-5 mr-3 lg:pb-5">
             New Collections

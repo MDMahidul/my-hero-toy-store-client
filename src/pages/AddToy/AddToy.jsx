@@ -55,12 +55,12 @@ const AddToy = () => {
       });
   };
   return (
-    <div className=" min-h-screen bg-base-100 my-8">
+    <div className=" min-h-screen  my-8">
       <div className="hero-content text-center">
         <div className="lg:w-1/2">
-          <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full  shadow-2xl ">
             <div className="card-body">
-              <h1 className="text-3xl font-bold text-center">Add A Toy</h1>
+              <h1 className="text-3xl font-bold text-center text-red-600">Add A Toy</h1>
               <form onSubmit={handleToyUpload}>
                 <div className="grid grid-col-1 lg:grid-cols-2 gap-4  ">
                   <div className="form-control">
@@ -73,7 +73,7 @@ const AddToy = () => {
                     <input
                       type="text"
                       placeholder="enter toy name"
-                      className="input input-bordered"
+                      className="input input-bordered bg-white"
                       name="toyName"
                       required
                     />
@@ -88,7 +88,7 @@ const AddToy = () => {
                     <input
                       type="text"
                       placeholder="name"
-                      className="input input-bordered"
+                      className="input input-bordered bg-white"
                       name="sellerName"
                       required
                       defaultValue={
@@ -108,7 +108,7 @@ const AddToy = () => {
                     <input
                       type="email"
                       placeholder="enter seller name"
-                      className="input input-bordered"
+                      className="input input-bordered bg-white"
                       name="sellerEmail"
                       defaultValue={user?.email}
                       required
@@ -122,7 +122,7 @@ const AddToy = () => {
                       </span>
                     </label>
                     <select
-                      className="select select-bordered"
+                      className="select select-bordered bg-white"
                       required
                       name="category"
                     >
@@ -144,7 +144,7 @@ const AddToy = () => {
                     <input
                       type="text"
                       placeholder="enter price"
-                      className="input input-bordered"
+                      className="input input-bordered bg-white"
                       name="price"
                       required
                     />
@@ -159,7 +159,7 @@ const AddToy = () => {
                     <input
                       type="text"
                       placeholder="enter ratings"
-                      className="input input-bordered"
+                      className="input input-bordered bg-white"
                       name="rating"
                       required
                     />
@@ -176,7 +176,7 @@ const AddToy = () => {
                     <input
                       type="text"
                       placeholder="enter quantity"
-                      className="input input-bordered"
+                      className="input input-bordered bg-white"
                       name="quantity"
                       required
                     />
@@ -191,7 +191,7 @@ const AddToy = () => {
                     <input
                       type="url"
                       placeholder="photo url"
-                      className="input input-bordered"
+                      className="input input-bordered bg-white"
                       name="photourl"
                       required
                     />
@@ -206,7 +206,7 @@ const AddToy = () => {
                     </span>
                   </label>
                   <textarea
-                    className="textarea textarea-bordered"
+                    className="textarea textarea-bordered bg-white"
                     placeholder="description"
                     required
                     name="description"

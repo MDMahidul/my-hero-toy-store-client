@@ -76,7 +76,7 @@ const MyToys = () => {
       <div className="overflow-x-auto ">
         <table className="table">
           {/* head */}
-          <thead className="bg-gray-200">
+          <thead className="bg-gray-200 text-gray-600">
             <tr>
               <th>SL</th>
               <th>Toy Name</th>
@@ -89,7 +89,7 @@ const MyToys = () => {
           </thead>
           <tbody>
             {toys.map((toy, index) => (
-              <tr key={toy._id}>
+              <tr key={toy._id} className="text-gray-600">
                 <th>{index + 1}</th>
                 <td>{toy.toyName}</td>
                 <td>{toy.sellerName}</td>

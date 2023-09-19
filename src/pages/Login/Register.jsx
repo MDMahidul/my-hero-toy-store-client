@@ -62,10 +62,10 @@ const Register = () => {
         })
     }
     return (
-      <div className=" min-h-screen bg-base-100 my-5">
+      <div className=" min-h-screen my-5">
         <div className="hero-content text-center">
           <div className="lg:w-1/2">
-            <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
+            <div className="card flex-shrink-0 w-full  shadow-2xl">
               <div className="card-body">
                 <h1 className="text-3xl font-bold text-center">Register now</h1>
                 <form onSubmit={handleUserSignup}>
@@ -76,7 +76,7 @@ const Register = () => {
                     <input
                       type="text"
                       placeholder="name"
-                      className="input input-bordered"
+                      className="input input-bordered bg-white"
                       name="name"
                     />
                   </div>
@@ -89,7 +89,7 @@ const Register = () => {
                     <input
                       type="email"
                       placeholder="email"
-                      className="input input-bordered"
+                      className="input input-bordered bg-white"
                       name="email"
                       required
                     />
@@ -101,7 +101,7 @@ const Register = () => {
                     <input
                       type="url"
                       placeholder="photo url"
-                      className="input input-bordered"
+                      className="input input-bordered bg-white"
                       defaultValue="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png"
                       name="photourl"
                     />
@@ -116,7 +116,7 @@ const Register = () => {
                     <input
                       type="password"
                       placeholder="password"
-                      className="input input-bordered"
+                      className="input input-bordered bg-white"
                       name="password"
                       required
                     />

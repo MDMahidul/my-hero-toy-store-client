@@ -31,7 +31,7 @@ const AllToys = () => {
               <input
                 type="text"
                 placeholder="Search By Name"
-                className="input input-bordered"
+                className="input input-bordered bg-white"
                 name="toyName"
               />
               <button className="btn btn-square">
@@ -59,7 +59,7 @@ const AllToys = () => {
         <table className="table">
           {/* head */}
           <thead className="bg-gray-200">
-            <tr>
+            <tr className="text-gray-700">
               <th>SL</th>
               <th>Toy Name</th>
               <th>Seller Name</th>
@@ -71,7 +71,7 @@ const AllToys = () => {
           </thead>
           <tbody>
             {toys.map((toy, index) => (
-              <tr key={toy._id}>
+              <tr key={toy._id} className="text-gray-700">
                 <th>{index + 1}</th>
                 <td>{toy.toyName}</td>
                 <td>{toy.sellerName}</td>

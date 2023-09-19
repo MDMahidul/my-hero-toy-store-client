@@ -7,7 +7,7 @@ const Banner = () => {
      AOS.init();
    }, []);
     return (
-      <div className="hero bg-base-100 min-h-screen  container mx-auto mt-2 px-6 lg:px-10">
+      <div className="hero min-h-screen  container mx-auto mt-2 px-6 lg:px-10">
         <div className="hero-content flex-col-reverse lg:flex-row-reverse" data-aos='fade-right'>
           <img
             src="https://www.superherotoystore.com/cdn/shop/files/Untitleddesign_855af409-f28b-4948-a860-870fad9b8f71_1600x.jpg?v=1685709560"
